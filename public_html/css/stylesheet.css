@@ -1,0 +1,300 @@
+body {
+    margin: 0;
+    font-family: arial;
+    font-size: 14px;
+}
+header {
+    background-color: #1d9480;
+    position: relative;
+    height: 10vh;
+}
+.logo-senior {
+    height: 5vh;
+    margin-left: 2.5%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+button {
+    background-color: #317ab6;
+    color: white;
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-familty: arial;
+}
+button:hover {
+    background-color: #205078;
+    transition-duration: 0.4s;
+}
+.grid-wrapper {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+}
+section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.content {
+    border: 1px solid #317ab6;
+    border-radius: 5px;
+}
+h2 {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #317ab6;
+    margin: 0;
+    padding: 10px 15px 10px 15px;
+}
+form {
+    margin: 15px;
+}
+label {
+    color: #666666;
+}
+td {
+    padding-top: 10px;
+}
+.text-field {
+    margin-top: 5px;
+    width: 95%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+form button {
+    margin-bottom: 5px;
+}
+.content-container {
+    color: #666666;
+    margin: 15px;
+}
+
+
+
+
+// Customizações do botão Checkbox
+.container {
+  position: relative;
+  padding-left: 25px;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+// Oculta o checkbox padrão
+.container input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+// Cria um custom checkbox
+.checkmark {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+}
+// Adicionar cor no hover
+.container:hover input[type=checkbox] ~ .checkmark {
+  background-color: #317ab6;
+  border: 1px solid #317ab6;
+}
+// Adiciona cor quando o checkbox é marcado
+.container input[type=checkbox]:checked ~ .checkmark {
+  background-color: #317ab6;
+  border: 1px solid #317ab6;
+}
+// Cria uma marca de certo
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+// Mostra a marca quando o checkbox é marcado
+.container input[type=checkbox]:checked ~ .checkmark:after {
+  display: block;
+}
+// Estilo da marca de certo
+.container .checkmark:after {
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+// Customizações do radio-button
+// Oculta o radio padrão
+.container input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+// Cria um radio button customizado
+.radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+}
+// Adicionar o efeito hover no radio button
+.container:hover input[type=radio] ~ .radio {
+  background-color: white;
+}
+// Quando o radio button é marcado, adiciona uma cor branca no fundo
+.container input[type=radio]:checked ~ .radio {
+  background-color: white;
+}
+// Posiciona o circulo do radio button
+.radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+// Mostra o círculo no radio button quando marcado
+.container input[type=radio]:checked ~ .radio:after {
+  display: block;
+}
+// Estilo do radio button
+.container .radio:after {
+ 	top: 4px;
+	left: 4px;
+	width: 7.5px;
+	height: 7.5px;
+	border-radius: 50%;
+	background: #317ab6;
+}
+
+// Largura da tabela de consulta
+.consult-table {
+    width: 100%;
+}
+// Formatação da linha da tabela de consulta
+.content-table td {
+    height: 25px;
+    margin: 0;
+    padding: 5px;
+    width: 33%;
+    border-top: 1px solid #cccccc;
+    vertical-align: middle;
+}
+// Formatação do título das colunas na tabela
+.header-table td {
+    font-weight: bold;
+    height: 25px;
+    margin: 0;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+
+// Customização do modal "Incluir pessoa"
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+// Conteúdo do modal
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 5px;
+}
+// Botão fechar
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+// Hover do botão fechar
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+// Botão "Salvar" dentro do modal
+.btn-modal {
+    margin-top: 15px;
+}
+// Título do modal
+h3 {
+    color: #666;
+}
+// Linha divisória do título/conteúdo
+hr {
+    border: 0.5px solid #cccccc;
+    widht: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+// Customização da lista de resultados da pesquisa por pessoas
+#result {
+   position: absolute;
+   width: 40%;
+   cursor: pointer;
+   overflow-y: auto;
+   max-height: 400px;
+   box-sizing: border-box;
+   z-index: 1001;
+  }
+.link-class:hover{
+   background-color:#f1f1f1;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0px !important;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px !important;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+footer {
+    height: 100px;
+}
+
+input {
+    color: #666666;
+}

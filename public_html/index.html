@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html ng-app="hotelFront">
+    
+    <head>
+        <title>Senior</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+    </head>
+    
+    <body ng-controller="HotelController">
+        
+        <header>
+            <img class="logo-senior" src="img/logo-senior.svg"/>
+        </header>
+        
+        <div class="grid-wrapper">
+            
+            <section>
+                <button id="btnIncluirPessoa">Incluir pessoa</button>
+            </section>
+
+            <section class="content">
+                <h2>Novo check-in</h2>
+                <form>
+                    <table style="width:100%">
+                        <tr>
+                            <td style="width:50%">
+                                <label for="dataEntrada">Data/hora de entrada</label>
+                                <input ng-model="data.dataEntrada" type="text" value="2000-01-01T00:00" class="text-field" id="dataEntrada" name="dataEntrada"/>
+                            </td>
+                            <td style="width:50%">
+                                <label for="dataSaida">Data/hora de saída</label>
+                                <br>
+                                <input ng-model="data.dataSaida" type="text" value="2000-01-01T00:00" class="text-field" id="dataSaida" name="dataSaida"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%">
+                                <div>
+                                    <label for="search">Pessoa</label>
+                                    <input ng-model="data.nome" type="text" name="search" id="search" class="text-field form-control" />
+                                </div>
+                                <ul class="list-group" id="result"></ul>
+                                <br />
+                            </td>
+                            <td>
+                                <br>
+                                <label class="container">
+                                    <input ng-model="data.veiculo" class="checkbox" type="checkbox" id="possuiVeiculo" name="possuiVeiculo"><span class="checkmark"></span>
+                                    Possui veículo
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                    <button ng-click="checkin(data)">Salvar</button>
+                </form>
+            </section>
+
+            <section class="content">
+                <h2>Consultas</h2>
+                <div class="content-container">
+                    <p>Filtrar por:<p>
+                        <label class="container">Pessoas ainda presentes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input ng-click="presentes()" type="radio" id="presentes" name="status" checked>
+                            <span class="radio"></span>
+                        </label>
+                        <label class="container">Pessoas que já deixaram o hotel
+                            <input ng-click="sairam()" type="radio" id="sairam" name="status">
+                            <span class="radio"></span>
+                        </label>
+                    <table class="consult-table">
+                        <theader>
+                            <tr class="header-table">
+                                <td>Nome</td>
+                                <td>Documento</td>
+                                <td>Valor gasto (R$)</td>
+                            </tr>
+                        </theader>
+                        <tbody>
+                            <tr class="content-table" ng-repeat="final in final">
+                                <td>{{final.nome}}</td>
+                                <td>{{final.documento}}</td>
+                                <td>{{final.valor}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Modal inserir pessoa -->
+            <div id="incluirPessoa" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Incluir pessoa</h3>
+                    <hr>
+                    <form>
+                        <label>Nome</label>
+                        <br>
+                        <input id="nome" name="nome" type="text" ng-model="hospede.nome" class="text-field">
+                        <br><br>
+                        <label>Documento</label>
+                        <br>
+                        <input id="documento" name="documento" type="text" ng-model="hospede.documento" class="text-field">
+                        <br><br>
+                        <label>Telefone</label>
+                        <br>
+                        <input id="telefone" name="telefone" type="text" ng-model="hospede.telefone" class="text-field">
+                        <br>
+                        <button class="btn-modal" ng-click="salvar(hospede)">Salvar</button>
+                    </form>
+                </div>
+            </div>
+            
+            <footer></footer>
+
+            <!-- Script AngularJS 1.7.x -->
+            <script src="js/angular.min.js"></script>
+            
+            <!-- Controller para manipular arrays hospedes e checkin -->
+            <script src="js/controller.js"></script>
+            
+            <!-- Script para calcular o valor da diária -->
+            <script src="js/calculator.js"></script>
+            
+            <!-- Script 'live search' do campo Pessoa -->
+            <script src="js/search.js"></script>
+            
+            <!-- Modal para incluir pessoa -->
+            <script src="js/modal.js"></script>
+        </div>
+    </body>
+</html>
